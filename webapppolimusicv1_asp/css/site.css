@@ -1,0 +1,831 @@
+/* ==========================================================================
+   PoliMusic - site.css
+   --------------------------------------------------------------------------
+   Paleta de colores original: "Sunset Vinyl"
+   
+   Inspirada en un atardecer sobre un tornamesa de vinilo:
+   - Tonos clidos (coral, mbar, lavanda) sobre fondo oscuro noche.
+   - Acentos dorados para evocar el vinilo clsico.
+   
+   Paleta completa:
+     --pm-bg:        #0F0E1A   (Azul noche profundo)
+     --pm-bg-card:   #1A1830   (Azul noche cartes)
+     --pm-bg-alt:    #252238   (Gris-azul alternativo)
+     --pm-primary:   #E8556B   (Coral atardecer)
+     --pm-primary-h: #FF6B7E   (Coral hover)
+     --pm-secondary: #4A9DBA   (Turquesa noche)
+     --pm-accent:    #F5B945   (mbar dorado vinilo)
+     --pm-success:   #2ECC71   (Verde)
+     --pm-danger:    #E74C3C   (Rojo)
+     --pm-warning:   #F39C12   (Naranja)
+     --pm-text:      #F0EEF6   (Texto claro)
+     --pm-text-dim:  #9B98AE   (Texto difuminado)
+     --pm-border:    #2D2B40   (Borde oscuro)
+   
+   Concepto: el usuario se siente como un DJ nocturno explorando
+   su coleccin de vinilos digitales.
+   ========================================================================== */
+
+:root {
+    /* --- Paleta "Sunset Vinyl" --- */
+    --pm-bg:         #0F0E1A;
+    --pm-bg-card:    #1A1830;
+    --pm-bg-alt:     #252238;
+    --pm-primary:    #E8556B;
+    --pm-primary-h:  #FF6B7E;
+    --pm-secondary:  #4A9DBA;
+    --pm-accent:     #F5B945;
+    --pm-success:    #2ECC71;
+    --pm-danger:     #E74C3C;
+    --pm-warning:    #F39C12;
+    --pm-text:       #F0EEF6;
+    --pm-text-dim:   #9B98AE;
+    --pm-border:     #2D2B40;
+    --pm-radius:     14px;
+    --pm-radius-sm:  8px;
+    --pm-shadow:     0 4px 20px rgba(0,0,0,0.35);
+    --pm-shadow-sm:  0 2px 8px rgba(0,0,0,0.25);
+    --pm-transition: all 0.25s ease;
+}
+
+/* =====  Reset bsico  ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--pm-bg);
+    color: var(--pm-text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* =====  Scrollbar personalizada  ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--pm-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--pm-border);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--pm-primary);
+}
+
+/* ==========================================================================
+   LOGIN PAGE
+   ========================================================================== */
+
+.page-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, var(--pm-bg-alt) 0%, var(--pm-bg) 70%);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--pm-bg-card);
+    border: 1px solid var(--pm-border);
+    border-radius: var(--pm-radius);
+    padding: 40px 35px;
+    box-shadow: var(--pm-shadow);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login-icon {
+    font-size: 3.5rem;
+    color: var(--pm-primary);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.login-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--pm-text);
+    letter-spacing: 1px;
+}
+
+.login-subtitle {
+    color: var(--pm-text-dim);
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+/* =====  Formulario de login  ===== */
+.login-form .form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pm-text-dim);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--pm-bg-alt);
+    border: 1px solid var(--pm-border);
+    border-radius: var(--pm-radius-sm);
+    color: var(--pm-text);
+    font-size: 0.95rem;
+    transition: var(--pm-transition);
+}
+
+.form-group input::placeholder {
+    color: var(--pm-text-dim);
+    opacity: 0.6;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--pm-primary);
+    box-shadow: 0 0 0 3px rgba(232, 85, 107, 0.15);
+}
+
+.login-hint {
+    margin-top: 28px;
+    padding: 16px;
+    background: rgba(74, 157, 186, 0.08);
+    border: 1px dashed var(--pm-secondary);
+    border-radius: var(--pm-radius-sm);
+    font-size: 0.82rem;
+    color: var(--pm-text-dim);
+}
+
+.login-hint code {
+    background: var(--pm-bg-alt);
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--pm-accent);
+    font-size: 0.85rem;
+}
+
+.login-hint p {
+    margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   BOTONES (reutilizables en toda la app)
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--pm-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--pm-transition);
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background: var(--pm-primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: var(--pm-primary-h);
+    box-shadow: 0 4px 15px rgba(232, 85, 107, 0.35);
+}
+
+.btn-secondary {
+    background: var(--pm-bg-alt);
+    color: var(--pm-text);
+    border: 1px solid var(--pm-border);
+}
+.btn-secondary:hover {
+    background: var(--pm-border);
+}
+
+.btn-success {
+    background: var(--pm-success);
+    color: #fff;
+}
+.btn-success:hover {
+    filter: brightness(1.15);
+}
+
+.btn-warning {
+    background: var(--pm-warning);
+    color: #fff;
+}
+.btn-warning:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.35);
+}
+
+.btn-danger {
+    background: var(--pm-danger);
+    color: #fff;
+}
+.btn-danger:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--pm-text);
+    border: 1px solid var(--pm-border);
+}
+.btn-outline:hover {
+    border-color: var(--pm-primary);
+    color: var(--pm-primary);
+}
+
+.btn-sm {
+    padding: 7px 16px;
+    font-size: 0.82rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* =====  Botn Play especial  ===== */
+.btn-play {
+    background: linear-gradient(135deg, var(--pm-primary) 0%, var(--pm-accent) 100%);
+    color: #fff;
+    padding: 7px 18px;
+    border: none;
+    border-radius: 24px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--pm-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-play:hover {
+    box-shadow: 0 4px 15px rgba(232, 85, 107, 0.4);
+    transform: translateY(-1px);
+}
+.btn-play.playing {
+    background: linear-gradient(135deg, var(--pm-secondary) 0%, var(--pm-accent) 100%);
+    animation: pulse-play 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-play {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 157, 186, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(74, 157, 186, 0); }
+}
+
+.play-icon {
+    font-size: 0.7rem;
+}
+
+/* ==========================================================================
+   ALERTAS
+   ========================================================================== */
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: var(--pm-radius-sm);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.alert-icon {
+    font-size: 1.1rem;
+}
+
+.alert-error {
+    background: rgba(231, 76, 60, 0.12);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    color: #FF8A7E;
+}
+
+.error-msg {
+    background: rgba(231, 76, 60, 0.12);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    color: #FF8A7E;
+    padding: 14px 18px;
+    border-radius: var(--pm-radius-sm);
+    margin: 20px;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   SONGS PAGE - HEADER
+   ========================================================================== */
+
+.site-header {
+    background: var(--pm-bg-card);
+    border-bottom: 1px solid var(--pm-border);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon {
+    font-size: 1.6rem;
+    color: var(--pm-primary);
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--pm-text);
+    letter-spacing: 0.5px;
+}
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.user-greeting {
+    font-size: 0.9rem;
+    color: var(--pm-text-dim);
+}
+
+.user-greeting strong {
+    color: var(--pm-accent);
+}
+
+/* =====  Badges de rol  ===== */
+.badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge-admin {
+    background: linear-gradient(135deg, var(--pm-primary) 0%, var(--pm-warning) 100%);
+    color: #fff;
+}
+
+.badge-normal {
+    background: var(--pm-secondary);
+    color: #fff;
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 24px 120px; /* 120px bottom para que no tape el player fijo */
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--pm-text);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--pm-primary), var(--pm-accent));
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   TABLA DE CANCIONES
+   ========================================================================== */
+
+.table-card {
+    background: var(--pm-bg-card);
+    border: 1px solid var(--pm-border);
+    border-radius: var(--pm-radius);
+    overflow: hidden;
+    box-shadow: var(--pm-shadow-sm);
+}
+
+.songs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.songs-table thead {
+    background: var(--pm-bg-alt);
+}
+
+.songs-table th {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--pm-text-dim);
+    border-bottom: 1px solid var(--pm-border);
+}
+
+.songs-table td {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    color: var(--pm-text);
+    border-bottom: 1px solid var(--pm-border);
+}
+
+.songs-table tbody tr {
+    transition: var(--pm-transition);
+}
+
+.songs-table tbody tr:hover {
+    background: rgba(232, 85, 107, 0.05);
+}
+
+.songs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =====  Resaltar la cancin que est sonando  ===== */
+.songs-table tbody tr.now-playing {
+    background: rgba(74, 157, 186, 0.1);
+    border-left: 3px solid var(--pm-secondary);
+}
+
+.songs-table tbody tr.now-playing td:first-child {
+    color: var(--pm-accent);
+    font-weight: 700;
+}
+
+/* =====  Columnas especficas  ===== */
+.col-id {
+    width: 60px;
+    text-align: center;
+}
+.col-play {
+    width: 100px;
+    text-align: center;
+}
+.col-plays {
+    width: 140px;
+    text-align: center;
+}
+.col-actions {
+    width: 200px;
+    white-space: nowrap;
+}
+
+.plays-count {
+    display: inline-block;
+    background: var(--pm-bg-alt);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--pm-accent);
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.empty-row {
+    text-align: center;
+    color: var(--pm-text-dim);
+    padding: 40px 18px;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   FORMULARIOS MODALES (Crear / Editar cancin)
+   ========================================================================== */
+
+.modal-form {
+    margin-bottom: 24px;
+    animation: fadeSlideIn 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-form-card {
+    background: var(--pm-bg-card);
+    border: 1px solid var(--pm-border);
+    border-radius: var(--pm-radius);
+    padding: 28px;
+    box-shadow: var(--pm-shadow);
+}
+
+.modal-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--pm-border);
+}
+
+.modal-form-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--pm-text);
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: var(--pm-text-dim);
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 0 8px;
+    line-height: 1;
+    transition: var(--pm-transition);
+    text-decoration: none;
+}
+
+.btn-close:hover {
+    color: var(--pm-danger);
+}
+
+.song-form .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.song-form .form-group {
+    margin-bottom: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* ==========================================================================
+   REPRODUCTOR DE AUDIO FIJO
+   ========================================================================== */
+
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--pm-bg-card);
+    border-top: 1px solid var(--pm-border);
+    padding: 14px 24px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    z-index: 200;
+    backdrop-filter: blur(10px);
+}
+
+.player-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-song-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex: 1;
+}
+
+.player-icon {
+    font-size: 1.5rem;
+    color: var(--pm-primary);
+}
+
+.player-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.player-label {
+    font-size: 0.72rem;
+    color: var(--pm-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--pm-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.audio-player {
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    border-radius: var(--pm-radius-sm);
+}
+
+/* =====  Estilo del audio player en navegadores modernos  ===== */
+.audio-player::-webkit-media-controls-panel {
+    background: var(--pm-bg-alt);
+    border-radius: var(--pm-radius-sm);
+}
+
+.audio-player::-webkit-media-controls-play-button {
+    background: var(--pm-primary);
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-user {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .user-info {
+        align-items: center;
+    }
+
+    .song-form .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 20px 16px 140px;
+    }
+}
+
+@media (max-width: 640px) {
+    .songs-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .songs-table thead,
+    .songs-table tbody,
+    .songs-table th,
+    .songs-table td {
+        display: block;
+    }
+
+    .songs-table thead {
+        display: none; /* En mvil ocultamos el header y dejamos scroll horizontal */
+    }
+
+    /* Versin mvil: cada fila como tarjeta */
+    .songs-table tbody tr {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 4px 12px;
+        padding: 16px;
+        border-bottom: 1px solid var(--pm-border);
+        align-items: center;
+    }
+
+    .songs-table td {
+        border-bottom: none;
+        padding: 4px 0;
+    }
+
+    .col-id {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        font-weight: 700;
+        color: var(--pm-accent);
+    }
+
+    .col-name {
+        grid-column: 2;
+        font-weight: 600;
+    }
+
+    .col-play, .col-plays, .col-actions {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+
+    .col-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    .player-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .audio-player {
+        max-width: 100%;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
+   UTILIDADES
+   ========================================================================== */
+
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }

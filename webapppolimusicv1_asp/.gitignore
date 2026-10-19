@@ -1,0 +1,15 @@
+# ASP Classic - Git Ignore
+
+# No ignorar .asp ni .css ni .js (son el cdigo fuente)
+
+# Ignorar archivos de respaldo
+*.bak
+*.tmp
+~$*
+
+# Ignorar logs de IIS
+*.log
+
+# No ignorar songFiles (los mp3 son necesarios para testing)
+# Pero si tienes mp3 grandes que no quieres subir:
+# songFiles/*.mp3
